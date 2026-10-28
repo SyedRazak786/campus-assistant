@@ -1,0 +1,81 @@
+.chat-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 760px) {
+  .chat-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chat-sidebar {
+  border-right: 1px solid var(--line);
+  padding-right: 20px;
+}
+
+.chat-sidebar-new {
+  width: 100%;
+  background: var(--ink);
+  color: var(--paper-card);
+  border: none;
+  padding: 10px 0;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.chat-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 9px 10px;
+  font-size: 13.5px;
+  color: var(--slate);
+  cursor: pointer;
+}
+
+.chat-sidebar-item:hover {
+  background: var(--paper);
+}
+
+.chat-sidebar-item.active {
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.chat-sidebar-item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat-sidebar-item-delete {
+  background: none;
+  border: none;
+  color: var(--slate);
+  font-size: 12px;
+  opacity: 0;
+  padding: 0 0 0 8px;
+}
+
+.chat-sidebar-item:hover .chat-sidebar-item-delete {
+  opacity: 1;
+}
+
+.chat-sidebar-empty {
+  font-size: 13px;
+  color: var(--slate);
+  padding: 8px 10px;
+}

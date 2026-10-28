@@ -1,0 +1,96 @@
+:root {
+  --ink: #1b2a4a;
+  --ink-soft: #2e3f63;
+  --paper: #f6f1e7;
+  --paper-card: #fffdf8;
+  --gold: #b08d34;
+  --gold-deep: #8f7128;
+  --slate: #5b6472;
+  --line: #e4dcc8;
+  --line-dark: rgba(27, 42, 74, 0.14);
+
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+
+p {
+  margin: 0;
+  color: var(--slate);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.hairline {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper-card);
+  border: none;
+  padding: 13px 26px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: var(--ink-soft);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--line-dark);
+  color: var(--ink);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn-outline:hover {
+  border-color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

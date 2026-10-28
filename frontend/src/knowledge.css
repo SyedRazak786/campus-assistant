@@ -1,0 +1,103 @@
+.k-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+
+.k-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 22px 12px 0;
+  margin-right: 22px;
+  margin-bottom: -1px;
+  font-size: 15px;
+  color: var(--slate);
+}
+
+.k-tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--gold);
+  font-weight: 500;
+}
+
+.k-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.k-card input[type='text'],
+.k-card textarea {
+  width: 100%;
+  border: 1px solid var(--line-dark);
+  background: transparent;
+  padding: 10px;
+  font-size: 14.5px;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.k-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.k-card input[type='text']:focus,
+.k-card textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.k-hint {
+  font-size: 13px;
+  color: var(--slate);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.k-status {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.k-status.ok {
+  color: #2f6b3a;
+}
+
+.k-status.error {
+  color: #9b2c2c;
+}
+
+.k-doc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.k-doc-name {
+  font-size: 14.5px;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+.k-doc-size {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.k-doc-delete {
+  background: none;
+  border: none;
+  color: var(--slate);
+  font-size: 12.5px;
+  text-decoration: underline;
+  padding: 0;
+  flex-shrink: 0;
+}
