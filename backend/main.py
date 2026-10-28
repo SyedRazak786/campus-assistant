@@ -3,12 +3,12 @@
 FastAPI entry point for the College Knowledge Assistant.
 
 Routes:
-  GET    /                           Frontend
-  POST   /ask                        Any logged-in user
-  GET    /faculty/documents          Faculty only
-  POST   /faculty/upload             Faculty only
-  POST   /faculty/note               Faculty only
-  DELETE /faculty/documents/{filename} Faculty only
+  GET    /                              Frontend / API status
+  POST   /ask                           Any logged-in user
+  GET    /faculty/documents             Faculty only
+  POST   /faculty/upload                Faculty only
+  POST   /faculty/note                  Faculty only
+  DELETE /faculty/documents/{filename}  Faculty only
 """
 
 import os
@@ -32,9 +32,13 @@ from rag.ingest import DOCS_PATH, load_file, split_documents
 
 app = FastAPI(title="College Knowledge Assistant API")
 
+# In Docker, backend files are copied to /app and the built frontend
+# is copied to /app/frontend/dist.
 BASE_DIR = Path(__file__).resolve().parent
-FRONTEND_DIST = BASE_DIR.parent / "frontend" / "dist"
+FRONTEND_DIST = BASE_DIR / "frontend" / "dist"
 
+# CORS is mainly needed for local development. In production, the
+# frontend and API are served from the same Render service.
 origins = [
     origin.strip()
     for origin in os.getenv(
@@ -74,7 +78,7 @@ def root():
 
     return {
         "status": "College Knowledge Assistant API is running",
-        "frontend": "Build the frontend to serve the website here.",
+        "frontend": "Frontend build was not found.",
     }
 
 
@@ -97,7 +101,7 @@ def ask(question: Question, user: dict = Depends(get_current_user)):
     return {"answer": get_answer(query)}
 
 
-# ------------------------------- Faculty document helpers
+# -------------------- Faculty document helpers --------------------
 
 
 def _safe_filename(name: str):
@@ -263,7 +267,7 @@ def delete_document(
     }
 
 
-# ------------------------------- Frontend static files
+# ------------------------- Frontend static files -------------------------
 # Keep this at the bottom so API routes above take priority.
 
 if FRONTEND_DIST.is_dir():
