@@ -1,3 +1,9 @@
+## 🚀 Live Demo
+
+**Try the deployed application here:** [Campus Assistant — Live Website](https://campus-assistant-p4pl.onrender.com/)
+
+A live AI-powered college knowledge assistant that helps students access college information and ask questions.
+
 # College Knowledge Assistant (RAG + LangChain)
 
 AI assistant that answers student questions using official college
@@ -30,3 +36,4 @@ npm run dev
 ## Status
 Scaffold only — RAG pipeline (ingest → embed → retrieve → answer) is
 stubbed and will be filled in step by step.
+
